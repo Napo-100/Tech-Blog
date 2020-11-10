@@ -28,4 +28,4 @@ Post.hasMany(Comment, {
   hooks: true,
 });
 
-module.exports = { User, Post, Vote, Comment };
+module.exports = { User, Post, Comment };
