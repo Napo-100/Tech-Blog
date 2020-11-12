@@ -1,30 +1,37 @@
-<section>
+<section class="card new-post-form">
   <h2>Create New Post</h2>
 
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-content">content</label>
-      <input id="post-content" name="post-content" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label for="post-title">
+          <h3>
+            Title
+          </h3>
+        </label>
+        <input type="text" id="post-title" name="post-title" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="post-content">
+          <h3>
+            Content
+          </h3>
+        </label>
+        <input type="text" id="post-content" name="post-content" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
 </section>
-
+</br>
 {{#if posts.length}}
 <section>
   <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
+  {{#each posts as |post|}}
+  {{> post-info post}}
+  </br>
+  <a href="/dashboard/edit/{{post.id}}" type="button" class="edit-link">Edit post</a>
+  {{/each}}
 </section>
 {{/if}}
 
